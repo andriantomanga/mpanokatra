@@ -39,4 +39,14 @@
 		</plugins>
 	</build>
 
+	<developers>
+		<developer>
+			<name>Andriantomanga</name>
+			<roles>
+				<role>Architect</role>
+				<role>Developer</role>
+			</roles>
+		</developer>
+	</developers>
+
 </project>
