@@ -13,15 +13,41 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package mg.kilalao.mpanokatra;
+package mg.kilalao.mpanokatra.elements;
 
-import mg.kilalao.mpanokatra.ui.MainFrame;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 /**
  * @author nabil andriantomanga
+ *
  */
-public class Main {
-	public static void main(String[] args) {
-		new MainFrame("Mpanokatra").setVisible(true);
+public class Tile extends MaterialThing {
+
+	private String id;
+
+	private String imagePath;
+
+	private Image image;
+
+	public Tile(String id, String imagePath) throws IOException {
+		super();
+		this.id = id;
+		this.imagePath = imagePath;
+		this.image = ImageIO.read(new File(imagePath));
+
 	}
+
+	@Override
+	public void draw(Graphics2D drawer) {
+
+		if (null != image) {
+			drawer.drawImage(image, rect.x, rect.y, null);
+		}
+	}
+
 }

@@ -13,15 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package mg.kilalao.mpanokatra;
+package mg.kilalao.mpanokatra.ui;
 
-import mg.kilalao.mpanokatra.ui.MainFrame;
+import java.awt.Component;
+
+import javax.swing.JFrame;
 
 /**
  * @author nabil andriantomanga
  */
-public class Main {
-	public static void main(String[] args) {
-		new MainFrame("Mpanokatra").setVisible(true);
+public class MainFrame extends JFrame {
+	
+	private ScenePanel scene;
+	
+	public MainFrame(final String mainFrameTitle) {
+		initMainFrame(mainFrameTitle);
 	}
+
+	private void initMainFrame(final String mainFrameTitle) {
+		setTitle(mainFrameTitle);
+		setSize(1000, 700);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		getContentPane().add(buildContentPane());
+	}
+
+	private Component buildContentPane() {
+		scene = new ScenePanel();
+		return scene;
+	}
+
 }

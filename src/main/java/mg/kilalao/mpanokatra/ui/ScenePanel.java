@@ -13,15 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package mg.kilalao.mpanokatra;
+package mg.kilalao.mpanokatra.ui;
 
-import mg.kilalao.mpanokatra.ui.MainFrame;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JPanel;
+
+import mg.kilalao.mpanokatra.elements.Tile;
 
 /**
  * @author nabil andriantomanga
+ *
  */
-public class Main {
-	public static void main(String[] args) {
-		new MainFrame("Mpanokatra").setVisible(true);
-	}
+public class ScenePanel extends JPanel {
+
+	private List<Tile> map = new ArrayList<>();
 }
